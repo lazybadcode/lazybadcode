@@ -29,20 +29,27 @@
         <hr>
     </div>
     <div class="post-content">
-        <h3 id="Git-Command"><a href="#Git-Command" class="headerlink" title="Git Command"></a>Git Command</h3><p>#Clone</p>
+        <h3 id="Git-Command"><a href="#Git-Command" class="headerlink" title="Git Command"></a>Git Command</h3><p><img src="/images/git-branches-merge.png" alt="Image of Branch"></p>
+<p>#Set user global</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"FIRST_NAME LAST_NAME"</span></span><br><span class="line"></span><br><span class="line">$ git config --global user.email <span class="string">"MY_NAME@example.com"</span></span><br></pre></td></tr></table></figure>
+
+<p>#Get config</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config -l --show-origin</span><br><span class="line"></span><br><span class="line">$ git config --global -l --show-origin</span><br></pre></td></tr></table></figure>
+
+<p>#Clone</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> origin</span><br></pre></td></tr></table></figure>
 
 <p>#Status</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br></pre></td></tr></table></figure>
 
 <p>#Diff</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git diff [filename]</span><br></pre></td></tr></table></figure>
 
 <p>#Add</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git add .</span><br><span class="line"></span><br><span class="line"><span class="comment">#keep and modified </span></span><br><span class="line">$ git reset HEAD [filename]</span><br><span class="line"></span><br><span class="line"><span class="comment">#unkeep and modified</span></span><br><span class="line">$ git reset HEAD --hard</span><br></pre></td></tr></table></figure>
 
 <p>#Commit</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git commit</span><br><span class="line">$ git commit -am <span class="string">"message"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git commit</span><br><span class="line">$ git commit -am <span class="string">"message"</span></span><br><span class="line"></span><br><span class="line">$ git checkout [commit-id]</span><br></pre></td></tr></table></figure>
 
 <p>#Staged to modified</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git reset</span><br><span class="line">$ git reset --hard 0ad5a7a6</span><br></pre></td></tr></table></figure>
@@ -54,26 +61,26 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br><span class="line"></span><br><span class="line">$ git fetch origin</span><br><span class="line">$ git merge origin/&lt;branch_name&gt;</span><br></pre></td></tr></table></figure>
 
 <p>#Log</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> -p</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> -p</span><br></pre></td></tr></table></figure>
 
 <p>#Checkout</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout .</span><br><span class="line"></span><br><span class="line">$ git checkout -</span><br><span class="line">$ git checkout &lt;commit_hash&gt;</span><br><span class="line"></span><br><span class="line">$ git checkout -b feature/xxx origin/feature/xxx</span><br></pre></td></tr></table></figure>
 
 <p>#Clean</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clean -df</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clean -df</span><br></pre></td></tr></table></figure>
 
 <p>#Remote</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">$ git remote prune origin</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git remote -v</span><br><span class="line">$ git remote add origin</span><br><span class="line">$ git remote prune origin</span><br></pre></td></tr></table></figure>
 
 <p>#Branch</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line">git branch --delete [develop]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">$ git branch --delete [develop]</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Extract Branch</span></span><br><span class="line">$ git checkout develop</span><br><span class="line"></span><br><span class="line">$ git branch feature/profile_management</span><br><span class="line"></span><br><span class="line">$ git checkout feature/profile_management</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Merge Branch</span></span><br><span class="line">$ git checkout develop</span><br><span class="line"></span><br><span class="line">$ git merge feature/profile_management</span><br><span class="line"></span><br><span class="line">$ git branch --delete feature/profile_management</span><br></pre></td></tr></table></figure>
 
 <p>#Tag</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -list</span><br><span class="line"></span><br><span class="line">$ git tag -a my_tag -m <span class="string">"crate tag v0.0.1"</span></span><br><span class="line">$ git push origin &lt;tag name&gt; </span><br><span class="line"></span><br><span class="line">$ git tag --delete my_tag</span><br><span class="line">$ git push --delete origin &lt;tag name&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git tag --ist</span><br><span class="line"></span><br><span class="line">$ git tag -a my_tag -m <span class="string">"crate tag v0.0.1"</span></span><br><span class="line">$ git push origin &lt;tag name&gt; </span><br><span class="line"></span><br><span class="line">$ git tag --delete my_tag</span><br><span class="line">$ git push --delete origin &lt;tag name&gt;</span><br></pre></td></tr></table></figure>
 
 
 <p>#Cherry Pick</p>
@@ -86,7 +93,7 @@
     
 </div>
     <div class="footer" id="footer">
-    <p>Copyright © 2020 <a class="flink" href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>-<a class="flink" href="https://github.com/sanjinhub/hexo-theme-geek">Geek</a>.
+    <p>Copyright © 2020 <a class="flink" href="https://hexo.io" target="_blank" rel="noopener">Winney</a>-<a class="flink" href="https://github.com/sanjinhub/hexo-theme-geek" target="_blank" rel="noopener">Geek</a>.
         <label class="el-switch el-switch-green el-switch-sm" style="vertical-align: sub;">
             <input type="checkbox" name="switch" id="update_style">
             <span class="el-switch-style"></span>
